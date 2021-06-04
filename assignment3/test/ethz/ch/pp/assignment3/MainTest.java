@@ -26,7 +26,7 @@ public class MainTest {
 		Main.count(counter, 4, ThreadCounterType.NATIVE, 100000);
 		Assert.assertEquals(100000 * 4, counter.value());
 	}
-	
+//	
 	@Test
 	public void testSynchronizedCounter() {
 		Counter counter = new SynchronizedCounter();

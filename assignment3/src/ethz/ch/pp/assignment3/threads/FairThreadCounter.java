@@ -11,7 +11,23 @@ public class FairThreadCounter extends ThreadCounter {
 	@Override
 	public void run() {
 		//TODO: implement
-		throw new UnsupportedOperationException();
+//		throw new UnsupportedOperationException();
+		for (int i = 0; i < numIterations; i++) {
+			synchronized(counter){
+				while(counter.value() % numThreads != id) {
+					try {
+						counter.wait();}catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+					counter.increment();
+					counter.notifyAll();	
+		}
+		
+		}
+		
+		
+	
 	}
 
 }
