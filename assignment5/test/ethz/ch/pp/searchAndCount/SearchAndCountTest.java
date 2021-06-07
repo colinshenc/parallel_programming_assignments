@@ -14,9 +14,15 @@ public class SearchAndCountTest {
 		RandomGenerator dg = new RandomGenerator();
 		int[] testNumbers = dg.randomArray(100);
 		int resSingle = SearchAndCountSeq.countNoAppearances(testNumbers, Workload.Type.HEAVY);
-		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
-				testNumbers, Workload.Type.HEAVY, 2, 2);
-		
+		SearchAndCountThreadDivideAndConquer task= new SearchAndCountThreadDivideAndConquer(testNumbers, Workload.Type.HEAVY, 2, 2);
+		int resMultiple=task.countNoAppearances();
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.HEAVY, 2, 2);
+		System.out.println('\n');
+
+		System.out.println(resSingle);
+		System.out.println(resMultiple);
+
 		Assert.assertEquals(resSingle, resMultiple);
 	}
 	
@@ -36,9 +42,14 @@ public class SearchAndCountTest {
 		RandomGenerator dg = new RandomGenerator();
 		int[] testNumbers = dg.randomArray(100);
 		int resSingle = SearchAndCountSeq.countNoAppearances(testNumbers, Workload.Type.LIGHT);
-		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
-				testNumbers, Workload.Type.LIGHT, 2, 2);
-
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.LIGHT, 2, 2);
+		SearchAndCountThreadDivideAndConquer task= new SearchAndCountThreadDivideAndConquer(testNumbers, Workload.Type.LIGHT, 2, 2);
+		int resMultiple=task.countNoAppearances();
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.HEAVY, 2, 2);
+		System.out.println(resSingle);
+		System.out.println(resMultiple);
 		Assert.assertEquals(resSingle, resMultiple);
 	}
 
@@ -47,9 +58,14 @@ public class SearchAndCountTest {
 		RandomGenerator dg = new RandomGenerator();
 		int[] testNumbers = dg.randomArray(100000);
 		int resSingle = SearchAndCountSeq.countNoAppearances(testNumbers, Workload.Type.HEAVY);
-		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
-				testNumbers, Workload.Type.HEAVY, 10000, 4);
-
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.HEAVY, 10000, 4);
+		SearchAndCountThreadDivideAndConquer task= new SearchAndCountThreadDivideAndConquer(testNumbers, Workload.Type.HEAVY, 10000, 100);
+		int resMultiple=task.countNoAppearances();
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.HEAVY, 2, 2);
+		System.out.println(resSingle);
+		System.out.println(resMultiple);
 		Assert.assertEquals(resSingle, resMultiple);
 	}
 
@@ -58,9 +74,14 @@ public class SearchAndCountTest {
 		RandomGenerator dg = new RandomGenerator();
 		int[] testNumbers = dg.randomArray(100000);
 		int resSingle = SearchAndCountSeq.countNoAppearances(testNumbers, Workload.Type.LIGHT);
-		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
-				testNumbers, Workload.Type.LIGHT, 100, 2);
-		
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.LIGHT, 100, 2);
+		SearchAndCountThreadDivideAndConquer task= new SearchAndCountThreadDivideAndConquer(testNumbers, Workload.Type.LIGHT, 100, 2);
+		int resMultiple=task.countNoAppearances();
+//		int resMultiple = SearchAndCountThreadDivideAndConquer.countNoAppearances(
+//				testNumbers, Workload.Type.HEAVY, 2, 2);
+		System.out.println(resSingle);
+		System.out.println(resMultiple);
 		Assert.assertEquals(resSingle, resMultiple);
 	}
 

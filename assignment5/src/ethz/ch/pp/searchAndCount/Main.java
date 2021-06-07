@@ -11,9 +11,9 @@ public class Main {
 		
 		sequential(input, Workload.Type.HEAVY);
 		
-		taskA(input, Workload.Type.HEAVY);
+//		taskA(input, Workload.Type.HEAVY);
 		taskB(input, Workload.Type.HEAVY);		
-		taskC(input, Workload.Type.HEAVY);		
+//		taskC(input, Workload.Type.HEAVY);		
 	}
 
 	public static void sequential(int[] input, Workload.Type wt){
@@ -36,6 +36,8 @@ public class Main {
 		System.out.println("=====================================");
 		System.out.println("TaskB");
 		//TODO: implement
+		SearchAndCountThreadDivideAndConquer task= new SearchAndCountThreadDivideAndConquer(input,wt,4,1);
+		int res=task.countNoAppearances();
 	}
 	
 	public static void taskC(int[] input, Workload.Type wt){
