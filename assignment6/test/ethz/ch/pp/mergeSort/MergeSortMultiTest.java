@@ -14,26 +14,32 @@ public class MergeSortMultiTest {
 		int[] res = MergeSortMulti.sort(testNumbers, Runtime.getRuntime().availableProcessors());
 		
 		Assert.assertEquals(testNumbers.length, res.length);
-		for (int i = 0; i < testNumbers.length - 1; i++) {
+		for (int i = 0; i < testNumbers.length-1; i++) {
+//			System.out.println(res[i]);
 			Assert.assertEquals(0, res[i]);
 		}
+//		System.out.println("\n"+res[res.length - 1]);
+
 		Assert.assertEquals(1, res[res.length - 1]);
 	}
-	
+//	
 	@Test
 	public void test100random() {
 	    RandomGenerator dg = new RandomGenerator();	    
-		int[] res = MergeSortMulti.sort(dg.randomArray(100), Runtime.getRuntime().availableProcessors());
+	    int[] test = dg.randomArray(100);
+		int[] res = MergeSortMulti.sort(test, Runtime.getRuntime().availableProcessors());
 		
 		Assert.assertEquals(100, res.length);
 		int last = Integer.MIN_VALUE;
-		for (int i = 0; i < res.length - 1; i++) {
+		for (int i = 0; i < test.length ; i++) {
+//			System.out.println(test[i]);
 			Assert.assertTrue(last <= res[i]);
 			last = res[i];
 		}
+
 	}
-	
-	
+//	
+//	
 	@Test
 	public void test100000random() {
 		RandomGenerator dg = new RandomGenerator();

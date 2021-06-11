@@ -33,7 +33,7 @@ public class Main {
 		long t0 = System.currentTimeMillis();
 		Sequence result = null;
 		for (int i = 0; i < 5; i++) {
-			result = LongestCommonSequenceMulti.longestCommonSequence(input, numThreads);
+			result = LongestCommonSequenceMulti.longestCommonSequence(input, numThreads,500);
 		}
 		long t1 = System.currentTimeMillis();
 		System.out.println("For (inputsize=" + input.length + ") LongestCommonSequenceMulti with " + numThreads + " threads takes " + ((t1 - t0)/5) + " msec");

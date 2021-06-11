@@ -25,7 +25,7 @@ public class SeqTest {
 			  int[] input = gen.randomArray(20);
 			  Sequence result = LongestCommonSequence.longestCommonSequence(input);
 
-			  System.out.println("Sequence: " + result.startIndex + " - " + result.endIndex);
+//			  System.out.println("Sequence: " + result.startIndex + " - " + result.endIndex);
 			  for (int i = result.startIndex; i <= result.endIndex; i++) {
 				  Assert.assertEquals(input[result.startIndex], input[i]);
 			  }
@@ -45,12 +45,21 @@ public class SeqTest {
 	  public void testCompare() {
 		  RandomGenerator gen = new RandomGenerator();
 		  for (int j = 0; j < 1000; j++) {
-			  int[] input = gen.randomArray(20);
+			  int[] input = gen.randomArray(200000);
+			  Sequence resSeq=LongestCommonSequence.longestCommonSequence(input);
+			  Sequence resMulti=LongestCommonSequenceMulti.longestCommonSequence(input, 4);
 			  Assert.assertEquals(
 					  Arrays.toString(input),
-					  LongestCommonSequence.longestCommonSequence(input),
-					  LongestCommonSequenceMulti.longestCommonSequence(input, 4)
+					  resSeq,
+					  resMulti
 					  );
+//			  System.out.println(Arrays.toString(input));
+			  System.out.println('\n');
+			  System.out.println(j);
+
+			  System.out.println("Seq Sequence: " + resSeq.startIndex + " - " + resSeq.endIndex);
+			  System.out.println("Multi Sequence: " + resMulti.startIndex + " - " + resMulti.endIndex);
+
 		  }
 	  }
 	  
